@@ -1,9 +1,7 @@
-var timer = null;
-
 window.onload = function () {
     var display = document.querySelector('#time'),
-    timer = new CountDownTimer(5),
-    timeObj = CountDownTimer.parse(5);
+    timer = new CountDownTimer(10),
+    timeObj = CountDownTimer.parse(10);
 
     format(timeObj.minutes, timeObj.seconds);
     
@@ -15,33 +13,46 @@ window.onload = function () {
         display.textContent = minutes + ':' + seconds;
     }
 
-    document.querySelector('button').addEventListener('click', function () {
+
+
+
+    var breakDisplay = document.querySelector('#breakTime'),
+    breakTimer = new BreakCountDownTimer(5),
+    breakTimeObj = BreakCountDownTimer.parse(5);
+
+    formatBreak(breakTimeObj.minutes, breakTimeObj.seconds);
+    
+    breakTimer.onTick(format);
+    
+    function formatBreak(minutes, seconds) {
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        breakDisplay.textContent = minutes + ':' + seconds;
+    }
+
+
+    document.getElementById('startButton').addEventListener('click', function () {
         timer.start();
+    });
+
+    document.getElementById('breakHiddenButton').addEventListener('click', function () {
+        breakTimer.start();
     });
 };
 
 $(document).ready(function() {
-  	$('#exerciseCarousel').carousel({
-  		interval: false
-	});
+     $('#exerciseCarousel').carousel({
+        interval: false
+    });
 });
 
-function stintFinished() {
-	lastExercise = false;
+function regularStintFinished() {
 	$('#exerciseCarousel').carousel('next');
-
-	if(!lastExercise){
-		startExerciseSwitchStint();
-		startNewStint();
-	} else {
-
-	}
-}
-
-function startNewStint() {
+    startExerciseSwitchStint();
 	$('#startButton').click();
 }
 
 function startExerciseSwitchStint() {
-
+    console.log("CLICKED");
+    $('#breakHiddenButton').click();
 }
