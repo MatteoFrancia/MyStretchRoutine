@@ -1,3 +1,5 @@
+var timer = null;
+
 window.onload = function () {
     var display = document.querySelector('#time'),
     timer = new CountDownTimer(5),
@@ -7,13 +9,39 @@ window.onload = function () {
     
     timer.onTick(format);
     
-    document.querySelector('button').addEventListener('click', function () {
-        timer.start();
-    });
-    
     function format(minutes, seconds) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = minutes + ':' + seconds;
     }
+
+    document.querySelector('button').addEventListener('click', function () {
+        timer.start();
+    });
 };
+
+$(document).ready(function() {
+  	$('#exerciseCarousel').carousel({
+  		interval: false
+	});
+});
+
+function stintFinished() {
+	lastExercise = false;
+	$('#exerciseCarousel').carousel('next');
+
+	if(!lastExercise){
+		startExerciseSwitchStint();
+		startNewStint();
+	} else {
+
+	}
+}
+
+function startNewStint() {
+	$('#startButton').click();
+}
+
+function startExerciseSwitchStint() {
+
+}

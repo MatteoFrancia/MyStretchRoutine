@@ -22,7 +22,7 @@ CountDownTimer.prototype.start = function() {
     } else {
       diff = 0;
       that.running = false;
-      alert("FINISHED");
+      stintFinished();
     }
 
     obj = CountDownTimer.parse(diff);
