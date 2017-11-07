@@ -33,14 +33,10 @@ $(document).ready(function() {
 
 function enableNoScreenSleep(){
     var noSleep = new NoSleep();
-    var enableNoScreenSleepButton = document.getElementById('enableNoScreenSleep');
+    var enableNoScreenSleepButton = document.getElementById('startButton');
     enableNoScreenSleepButton.addEventListener('click', function() {
         noSleep.enable();
-        enableNoScreenSleepButton.classList.add("btn-warning");
     }, false);
-
-    enableNoScreenSleepButton.click();
-    enableNoScreenSleepButton.classList.add("btn-success");
 }
 
 function regularStintFinished() {
