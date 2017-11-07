@@ -22,13 +22,7 @@ window.onload = function () {
         timer.start();
     });
 
-    var noSleep = new NoSleep();
-    var enableNoScreenSleepButton = document.getElementById('enableNoScreenSleep');
-    enableNoScreenSleepButton.addEventListener('click', function() {
-        noSleep.enable();
-    }, false);
-
-    enableNoScreenSleepButton.click();
+    enableNoScreenSleep();
 };
 
 $(document).ready(function() {
@@ -36,6 +30,18 @@ $(document).ready(function() {
     interval: false
 });
 });
+
+function enableNoScreenSleep(){
+    var noSleep = new NoSleep();
+    var enableNoScreenSleepButton = document.getElementById('enableNoScreenSleep');
+    enableNoScreenSleepButton.addEventListener('click', function() {
+        noSleep.enable();
+        enableNoScreenSleepButton.classList.add("btn-warning");
+    }, false);
+
+    enableNoScreenSleepButton.click();
+    enableNoScreenSleepButton.classList.add("btn-success");
+}
 
 function regularStintFinished() {
     exerciseEndAudio.play(); 
