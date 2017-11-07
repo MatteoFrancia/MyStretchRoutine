@@ -33,9 +33,17 @@ function initializeExerciseTimer(duration){
     }
 
     document.getElementById('startButton').addEventListener('click', function () {
+        setStartButtonToRunningState();
         exerciseEndAudio.play(); 
+        changeElementClass('carouselCard', 'bg-warning', 'bg-success');
         timer.start();
     });
+}
+
+function setStartButtonToRunningState(){
+    document.getElementById('startButton').innerHTML = 'RUNNING...';
+    changeElementClass('startButton', 'btn-info', 'btn-secondary');
+    document.getElementById('startButton').classList.add('disabled');
 }
 
 function enableNoScreenSleep(){
@@ -49,14 +57,15 @@ function enableNoScreenSleep(){
 function regularStintFinished() {
     exerciseEndAudio.play(); 
     $('#exerciseCarousel').carousel('next');
-    changeTimerAlertColor('alert-success', 'alert-warning');
+    changeElementClass('timerAlert', 'alert-success', 'alert-warning');
+    changeElementClass('carouselCard', 'bg-success', 'bg-warning');
 
     setTimeout(function(){ 
-        changeTimerAlertColor('alert-warning', 'alert-success');
+        changeElementClass('timerAlert', 'alert-warning', 'alert-success');
         $('#startButton').click();
     }, pauseBetweenExercises);
 }
 
-function changeTimerAlertColor(actualClass, newClass) {
-    document.getElementById('timerAlert').classList.replace(actualClass, newClass);
+function changeElementClass(elementId, actualClass, newClass) {
+    document.getElementById(elementId).classList.replace(actualClass, newClass);
 }
