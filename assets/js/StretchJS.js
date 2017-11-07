@@ -23,7 +23,7 @@ window.onload = function () {
     });
 
     var noSleep = new NoSleep();
-    var enableNoScreenSleepButton = document.getElementById('enableNoScreenSleep').click;
+    var enableNoScreenSleepButton = document.getElementById('enableNoScreenSleep');
     enableNoScreenSleepButton.addEventListener('click', function() {
         noSleep.enable();
     }, false);
