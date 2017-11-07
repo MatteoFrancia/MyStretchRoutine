@@ -1,9 +1,12 @@
+const exerciseDuration = 30;
+const pauseBetweenExercises = 6000;
+
 var exerciseEndAudio
 
 window.onload = function () {
     exerciseEndAudio = document.getElementById("exerciseEndAudio"); 
 
-    initializeExerciseTimer(10);
+    initializeExerciseTimer(exerciseDuration);
 
     enableNoScreenSleep();
 };
@@ -30,7 +33,7 @@ function initializeExerciseTimer(duration){
     }
 
     document.getElementById('startButton').addEventListener('click', function () {
-        //exerciseEndAudio.play(); 
+        exerciseEndAudio.play(); 
         timer.start();
     });
 }
@@ -44,13 +47,14 @@ function enableNoScreenSleep(){
 }
 
 function regularStintFinished() {
-    //exerciseEndAudio.play(); 
+    exerciseEndAudio.play(); 
     $('#exerciseCarousel').carousel('next');
     changeTimerAlertColor('alert-success', 'alert-warning');
+
     setTimeout(function(){ 
         changeTimerAlertColor('alert-warning', 'alert-success');
         $('#startButton').click();
-    }, 5000);
+    }, pauseBetweenExercises);
 }
 
 function changeTimerAlertColor(actualClass, newClass) {
