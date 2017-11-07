@@ -1,4 +1,9 @@
+var exerciseEndAudio
+
 window.onload = function () {
+    exerciseEndAudio = document.getElementById("exerciseEndAudio"); 
+
+
     var display = document.querySelector('#time'),
     timer = new CountDownTimer(10),
     timeObj = CountDownTimer.parse(10);
@@ -16,20 +21,24 @@ window.onload = function () {
     document.getElementById('startButton').addEventListener('click', function () {
         timer.start();
     });
+
+    var noSleep = new NoSleep();
+    noSleep.enable();
 };
 
 $(document).ready(function() {
-     $('#exerciseCarousel').carousel({
-        interval: false
-    });
+ $('#exerciseCarousel').carousel({
+    interval: false
+});
 });
 
 function regularStintFinished() {
-	$('#exerciseCarousel').carousel('next');
+    exerciseEndAudio.play(); 
+    $('#exerciseCarousel').carousel('next');
     startExerciseSwitchStint();
-	$('#startButton').click();
+    $('#startButton').click();
 }
 
 function startExerciseSwitchStint() {
         // ?
-}
+    }
