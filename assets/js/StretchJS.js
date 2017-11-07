@@ -3,10 +3,21 @@ var exerciseEndAudio
 window.onload = function () {
     exerciseEndAudio = document.getElementById("exerciseEndAudio"); 
 
+    initializeExerciseTimer(10);
 
+    enableNoScreenSleep();
+};
+
+$(document).ready(function() {
+ $('#exerciseCarousel').carousel({
+    interval: false
+});
+});
+
+function initializeExerciseTimer(duration){
     var display = document.querySelector('#time'),
-    timer = new CountDownTimer(10),
-    timeObj = CountDownTimer.parse(10);
+    timer = new CountDownTimer(duration),
+    timeObj = CountDownTimer.parse(duration);
 
     format(timeObj.minutes, timeObj.seconds);
     
@@ -19,17 +30,10 @@ window.onload = function () {
     }
 
     document.getElementById('startButton').addEventListener('click', function () {
+        //exerciseEndAudio.play(); 
         timer.start();
     });
-
-    enableNoScreenSleep();
-};
-
-$(document).ready(function() {
- $('#exerciseCarousel').carousel({
-    interval: false
-});
-});
+}
 
 function enableNoScreenSleep(){
     var noSleep = new NoSleep();
@@ -40,12 +44,15 @@ function enableNoScreenSleep(){
 }
 
 function regularStintFinished() {
-    exerciseEndAudio.play(); 
+    //exerciseEndAudio.play(); 
     $('#exerciseCarousel').carousel('next');
-    startExerciseSwitchStint();
-    $('#startButton').click();
+    changeTimerAlertColor('alert-success', 'alert-warning');
+    setTimeout(function(){ 
+        changeTimerAlertColor('alert-warning', 'alert-success');
+        $('#startButton').click();
+    }, 5000);
 }
 
-function startExerciseSwitchStint() {
-        // ?
-    }
+function changeTimerAlertColor(actualClass, newClass) {
+    document.getElementById('timerAlert').classList.replace(actualClass, newClass);
+}
