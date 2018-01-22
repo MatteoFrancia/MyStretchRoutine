@@ -5,5 +5,8 @@ $(document).ready(function () {
         } else if ($(this).attr("stretching_type") == 'mtb') {
             window.location.replace("mtb.html");
         }
+        else if ($(this).attr("stretching_type") == 'mtb_short') {
+            window.location.replace("mtb_short.html");
+        }
     });
 });
