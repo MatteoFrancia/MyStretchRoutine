@@ -8,5 +8,8 @@ $(document).ready(function () {
         else if ($(this).attr("stretching_type") == 'mtb_short') {
             window.location.replace("mtb_short.html");
         }
+        else if ($(this).attr("stretching_type") == 'shoulder') {
+            window.location.replace("shoulder.html");
+        }
     });
 });
