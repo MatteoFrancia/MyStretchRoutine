@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    var titles = ["[9'] Standard", "[9'] Bike", "[5'] Bike Short", "[9'] Shoulder and Hips"];
-    var links = ["index.html", "bike.html", "bike_short.html", "shoulder_and_hips.html"];
+    var titles = ["[9'] Standard", "[9'] Bike", "[5'] Bike Short", "[9'] Shoulder and Hips","[15'] Core Workout"];
+    var links = ["index.html", "bike.html", "bike_short.html", "shoulder_and_hips.html", "core_workout.html"];
     $('#stretchingMenu').empty();
     $.each(titles, function (i, t) {
             $('#stretchingMenu').append($(`

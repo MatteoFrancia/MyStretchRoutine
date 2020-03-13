@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>My Stretch Routine</title>
+
+	<link rel="icon" sizes="192x192" href="http://clipartix.com/wp-content/uploads/2016/12/Workout-exercise-clip-art-images-free-clipart-2-clipartix.png">
+
+	<link rel="apple-touch-icon" href="http://clipartix.com/wp-content/uploads/2016/12/Workout-exercise-clip-art-images-free-clipart-2-clipartix.png">
+	<link rel="apple-touch-startup-image" href="http://clipartix.com/wp-content/uploads/2016/12/Workout-exercise-clip-art-images-free-clipart-2-clipartix.png">
+	<meta name="apple-mobile-web-app-title" content="Stretching Routine">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+	<script src="assets/js/StretchJS.js" type="text/javascript"></script>
+	<script src="assets/js/countdowntimer.js" type="text/javascript"></script>
+	<script src="assets/js/NoSleep.min.js" type="text/javascript"></script>
+	<script src="assets/js/stretchingMenu.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+	<audio id="exerciseEndAudio">
+		<source src="assets/audio/derp.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+
+	<br><br>
+
+	<div class="container" id="container">
+		<div class="row">
+			<div class="col-2">
+			</div>
+			<div class="col-8">
+
+
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">
+							<img src="http://clipartix.com/wp-content/uploads/2016/12/Workout-exercise-clip-art-images-free-clipart-2-clipartix.png"
+							 height="50px">
+							My Stretch Routine
+
+							<br><br>
+
+							<div class="dropdown">
+								<button class="btn btn-danger dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+								 aria-haspopup="true" aria-expanded="false">
+									STRETCH ROUTINE
+								</button>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="stretchingMenu">
+								</div>
+							</div>
+						</h4>
+						<p class="card-text">
+
+							<div id="carouselCard" class="card text-white bg-warning mb-3">
+								<div class="card-body">
+									<h4 class="card-title">
+										My Stretch
+									</h4>
+									<p class="card-text">
+
+
+										<div id="exerciseCarousel" class="carousel slide" data-ride="carousel">
+
+											<ul class="carousel-indicators">
+												<li data-target="#demo" data-slide-to="0" class="active"></li>
+												<li data-target="#demo" data-slide-to="1"></li>
+												<li data-target="#demo" data-slide-to="2"></li>
+												<li data-target="#demo" data-slide-to="3"></li>
+												<li data-target="#demo" data-slide-to="4"></li>
+												<li data-target="#demo" data-slide-to="5"></li>
+												<li data-target="#demo" data-slide-to="6"></li>
+												<li data-target="#demo" data-slide-to="7"></li>
+												<li data-target="#demo" data-slide-to="8"></li>
+												<li data-target="#demo" data-slide-to="9"></li>
+												<li data-target="#demo" data-slide-to="10"></li>
+												<li data-target="#demo" data-slide-to="11"></li>
+												<li data-target="#demo" data-slide-to="12"></li>
+												<li data-target="#demo" data-slide-to="13"></li>
+												<li data-target="#demo" data-slide-to="14"></li>
+												<li data-target="#demo" data-slide-to="15"></li>
+												<li data-target="#demo" data-slide-to="16"></li>
+												<li data-target="#demo" data-slide-to="17"></li>
+												<li data-target="#demo" data-slide-to="18"></li>
+												<li data-target="#demo" data-slide-to="19"></li>
+												<li data-target="#demo" data-slide-to="20"></li>
+												<li data-target="#demo" data-slide-to="21"></li>
+												<li data-target="#demo" data-slide-to="22"></li>
+												<li data-target="#demo" data-slide-to="23"></li>
+												<li data-target="#demo" data-slide-to="24"></li>
+											</ul>
+
+											<div class="carousel-inner">
+												<div class="carousel-item active">
+													<img class="d-block w-100" src="assets/imgs/core_workout/1_full_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/2_elbow_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/3_hollow.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/4_side_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/5_side_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/6_crunch.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/7_full_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/8_elbow_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/9_hollow.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/10_side_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/11_side_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/12_crunch.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/13_full_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/14_elbow_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/15_hollow.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/16_side_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/17_side_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/18_crunch.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/19_full_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/20_elbow_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/21_hollow.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/22_side_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/23_side_plank.png" alt="">
+												</div>
+												<div class="carousel-item">
+													<img class="d-block w-100" src="assets/imgs/core_workout/24_crunch.png" alt="">
+												</div>
+											</div>
+										</div>
+
+									</p>
+								</div>
+							</div>
+
+							<div id="timerAlert" class="alert alert-success" role="alert">
+								<h4 class="text-center">Exercise Time:</h4>
+								<h1 class="text-center"><span id="time"></span></h1>
+							</div>
+
+						</p>
+
+						<button type="button" id="startButton" class="btn btn-info btn-lg btn-block">START</button>
+
+					</div>
+				</div>
+
+				<div class="col-2">
+				</div>
+			</div>
+		</div>
+</body>
+
+</html>
