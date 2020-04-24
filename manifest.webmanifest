@@ -1,0 +1,15 @@
+{
+    "background_color": "white",
+    "description": "My stretching routine",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "assets/imgs/stretching.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "My stretching routine",
+    "short_name": "Stretching routine",
+    "start_url": "index.html"
+  }
